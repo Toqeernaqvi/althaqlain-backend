@@ -1,0 +1,94 @@
+<h1><%= @hotel.name %></h1>
+
+<p>
+  <strong>City:</strong>
+  <%= @hotel.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @hotel.country %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @hotel.state %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @hotel.address %>
+</p>
+
+<p>
+  <strong>Location Latitude:</strong>
+  <%= @hotel.loc_lat %>
+</p>
+
+<p>
+  <strong>Location Longitude:</strong>
+  <%= @hotel.loc_long %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @hotel.rating %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @hotel.price %>
+</p>
+
+<p>
+  <strong>Discounted Price:</strong>
+  <%= @hotel.discounted_price %>
+</p>
+
+<p>
+  <strong>Bed:</strong>
+  <%= @hotel.bed %>
+</p>
+
+<p>
+  <strong>Living Room:</strong>
+  <%= @hotel.living_room %>
+</p>
+
+<p>
+  <strong>Bathroom:</strong>
+  <%= @hotel.bathroom %>
+</p>
+
+<p>
+  <strong>Kitchen:</strong>
+  <%= @hotel.kitchen %>
+</p>
+
+<p>
+  <strong>Reserved Room:</strong>
+  <%= @hotel.reserved_room %>
+</p>
+
+<p>
+  <strong>Facilities:</strong>
+  <%= @hotel.facilities %>
+</p>
+
+<p>
+  <strong>Paragraphs:</strong>
+  <%= @hotel.paragraphs %>
+</p>
+
+<h2>Images</h2>
+<div class="row">
+  <% @hotel.images.each do |image| %>
+    <div class="col-md-3 mb-3">
+      <%= image_tag image, class: "img-fluid" %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'Edit', edit_hotel_path(@hotel), class: 'btn btn-primary' %>
+<%= link_to 'Back', hotels_path, class: 'btn btn-secondary' %>
+<%= link_to 'Destroy', @hotel, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>

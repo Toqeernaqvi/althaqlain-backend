@@ -1,0 +1,20 @@
+<h1>Hotels</h1>
+<% if admin_signed_in? %>
+  <%= link_to 'New Hotel', new_hotel_path, class: 'btn btn-primary mb-3' %>
+<% end %>
+
+<div class="list-group">
+  <% @hotels.each do |hotel| %>
+    <a href="<%= hotel_path(hotel) %>" class="list-group-item list-group-item-action">
+      <h5 class="mb-1"><%= hotel.name %></h5>
+      <p class="mb-1"><%= hotel.city %>, <%= hotel.state %>, <%= hotel.country %></p>
+      <small>Rating: <%= hotel.rating %></small>
+      <% if admin_signed_in? %>
+        <div class="btn-group float-right">
+          <%= link_to 'Edit', edit_hotel_path(hotel), class: 'btn btn-secondary btn-sm' %>
+<%= link_to 'Destroy', hotel, data: { "turbo-method": :delete }, class: 'btn btn-danger btn-sm' %>
+        </div>
+      <% end %>
+    </a>
+  <% end %>
+</div>

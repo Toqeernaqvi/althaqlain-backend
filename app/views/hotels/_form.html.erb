@@ -1,0 +1,106 @@
+<%= form_with(model: hotel, local: true, class: "form") do |form| %>
+  <% if hotel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
+      <ul>
+        <% hotel.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :city, class: "form-label" %>
+    <%= form.text_field :city, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :country, class: "form-label" %>
+    <%= form.text_field :country, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :state, class: "form-label" %>
+    <%= form.text_field :state, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :address, class: "form-label" %>
+    <%= form.text_field :address, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :loc_lat, class: "form-label" %>
+    <%= form.text_field :loc_lat, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :loc_long, class: "form-label" %>
+    <%= form.text_field :loc_long, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :rating, class: "form-label" %>
+    <%= form.number_field :rating, step: 0.1, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :price, class: "form-label" %>
+    <%= form.number_field :price, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :discounted_price, class: "form-label" %>
+    <%= form.number_field :discounted_price, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :bed, class: "form-label" %>
+    <%= form.number_field :bed, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :living_room, class: "form-label" %>
+    <%= form.number_field :living_room, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :bathroom, class: "form-label" %>
+    <%= form.number_field :bathroom, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :kitchen, class: "form-label" %>
+    <%= form.number_field :kitchen, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :reserved_room, class: "form-label" %>
+    <%= form.number_field :reserved_room, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :facilities, class: "form-label" %>
+    <%= form.text_area :facilities, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :paragraphs, class: "form-label" %>
+    <%= form.text_area :paragraphs, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :images, class: "form-label" %>
+    <%= form.file_field :images, multiple: true, class: "form-control" %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
