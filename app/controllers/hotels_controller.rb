@@ -18,10 +18,19 @@ class HotelsController < ApplicationController
 
   def create
     @hotel = Hotel.new(hotel_params)
-    if @hotel.save
-      redirect_to @hotel, notice: 'Hotel was successfully created.'
-    else
-      render :new
+
+    respond_to do |format|
+      if @hotel.save
+        format.html { redirect_to @hotel, notice: 'Hotel was successfully created.' }
+        format.json { render :show, status: :created, location: @hotel }
+        
+        params[:hotel][:images].each do |image|
+          @hotel.images.attach(image)
+         end
+      else
+        format.html { render :new }
+        format.json { render json: @hotel.errors, status: :unprocessable_entity }
+      end
     end
   end
 

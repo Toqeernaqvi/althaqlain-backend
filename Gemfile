@@ -74,3 +74,6 @@ gem 'bootstrap', '~> 5.1.0'
 gem 'jquery-rails'
 
 gem 'image_processing', '~> 1.2'
+
+gem 'sidekiq', '~> 5.2.8'
+
