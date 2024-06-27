@@ -113,6 +113,30 @@
     <%= form.label :images, class: "form-label" %>
     <%= form.file_field :images, multiple: true, class: "form-control" %>
   </div>
+
+  <div class="field">
+    <p>Existing Images:</p>
+    <% @hotel.images.each do |image| %>
+      <div class="existing-image">
+        <%= image_tag image, class: "hotel-image" %>
+        <%= link_to "Delete", delete_image_hotel_path(@hotel, image), data: { "turbo-method": :delete }, class: "btn btn-danger" %>
+      </div>
+    <% end %>
+  </div>
+
+  <% if hotel.present? %>
+    <div class="field">
+      <%= form.label :base_image %>
+      <div class="image-radio-group">
+        <% @hotel.images.each do |img| %>
+          <div class="image-radio-option">
+            <%= form.radio_button :base_image, img %>
+            <%= image_tag img, alt: "Hotel Image",  class: "img-fluid" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
   
   <div class="text-center">
     <%= form.submit "Save Hotel", class: "btn btn-primary" %>

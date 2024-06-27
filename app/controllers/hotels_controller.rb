@@ -35,16 +35,26 @@ class HotelsController < ApplicationController
   end
 
   def update
+    if hotel_params[:images].blank?  # Check if no new images are uploaded
+      @hotel.images.attach(@hotel.images)  # Re-attach existing images to prevent deletion
+    end
+
     if @hotel.update(hotel_params)
       redirect_to @hotel, notice: 'Hotel was successfully updated.'
     else
       render :edit
     end
   end
-
+  
   def destroy
     @hotel.destroy
     redirect_to hotels_url, notice: 'Hotel was successfully destroyed.'
+  end
+
+  def delete_image
+    @hotel = Hotel.find(params[:id])
+    @hotel.images.find_by(id: params[:image_id]).purge
+    redirect_to edit_hotel_path(@hotel), notice: "Image deleted successfully."
   end
 
   private
@@ -54,6 +64,6 @@ class HotelsController < ApplicationController
     end
 
     def hotel_params
-      params.require(:hotel).permit(:name, :city, :country, :state, :address, :loc_lat, :loc_long, :rating, :price, :discounted_price, :bed, :living_room, :bathroom, :kitchen, :reserved_room, facilities: {}, paragraphs: {}, images: [])
+      params.require(:hotel).permit(:name, :city, :country, :state, :address, :loc_lat, :loc_long, :rating, :price, :discounted_price, :bed, :living_room, :bathroom, :kitchen, :reserved_room, :base_image, facilities: {}, paragraphs: {}, images: [])
     end
 end
