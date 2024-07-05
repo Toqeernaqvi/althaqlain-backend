@@ -26,7 +26,9 @@ class ReviewsController < ApplicationController
   end
 
   private
-
+  def authenticate_admin!
+    # assuming Devise method to authenticate admin user
+  end
     def set_hotel
       @hotel = Hotel.find(params[:hotel_id])
     end
