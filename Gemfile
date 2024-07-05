@@ -75,5 +75,6 @@ gem 'jquery-rails'
 
 gem 'image_processing', '~> 1.2'
 
-gem 'sidekiq', '~> 5.2.8'
+gem 'sidekiq', '~> 7.2.4'
 
+gem 'sass-rails', '>= 6'

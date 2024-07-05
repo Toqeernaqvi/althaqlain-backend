@@ -1,7 +1,7 @@
-<%= form_for hotel, class: "form", local: true, html: { multipart: true }  do |form| %>
+<%= form_for hotel, local: true,  html: { class: "form ", multipart: true }  do |form| %>
   <% if hotel.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
+      <h2 ><%= pluralize(hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
       <ul>
         <% hotel.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -9,6 +9,9 @@
       </ul>
     </div>
   <% end %>
+
+ 
+ 
 
   <div class="row mb-3">
     <div class="col-md-6">
@@ -114,8 +117,13 @@
     <%= form.file_field :images, multiple: true, class: "form-control" %>
   </div>
 
+    <div class="mb-3">
+    <%= form.label :base_image, class: "form-label" %>
+    <%= form.file_field :base_image, class: "form-control" %>
+  </div>
+
+
   <div class="field">
-    <p>Existing Images:</p>
     <% @hotel.images.each do |image| %>
       <div class="existing-image">
         <%= image_tag image, class: "hotel-image" %>
@@ -123,19 +131,6 @@
       </div>
     <% end %>
   </div>
-
-  <% if hotel.present? %>
-    <div class="field">
-      <%= form.label :base_image %>
-      <div class="image-radio-group">
-        <% @hotel.images.each do |img| %>
-          <div class="image-radio-option">
-            <%= form.radio_button :base_image, img %>
-            <%= image_tag img, alt: "Hotel Image",  class: "img-fluid" %>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
 
   
   <div class="text-center">

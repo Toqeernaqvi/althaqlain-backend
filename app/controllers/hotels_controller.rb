@@ -35,7 +35,7 @@ class HotelsController < ApplicationController
   end
 
   def update
-    if hotel_params[:images].blank?  # Check if no new images are uploaded
+    if params[:images].blank?  # Check if no new images are uploaded
       @hotel.images.attach(@hotel.images)  # Re-attach existing images to prevent deletion
     end
 
