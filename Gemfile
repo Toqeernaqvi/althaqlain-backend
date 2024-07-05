@@ -78,3 +78,5 @@ gem 'image_processing', '~> 1.2'
 gem 'sidekiq', '~> 7.2.4'
 
 gem 'sass-rails', '>= 6'
+
+gem 'rails_12factor', group: :production
