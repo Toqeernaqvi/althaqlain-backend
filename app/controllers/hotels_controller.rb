@@ -35,17 +35,24 @@ class HotelsController < ApplicationController
   end
 
   def update
-    if params[:images].blank?  # Check if no new images are uploaded
-      @hotel.images.attach(@hotel.images)  # Re-attach existing images to prevent deletion
+    if params[:hotel][:base_image].present?
+      @hotel.base_image.attach(params[:hotel][:base_image])
+      Rails.logger.debug("Base image attached: #{@hotel.base_image.attached?}")
     end
-
-    if @hotel.update(hotel_params)
+    hotel_update_params = params[:hotel][:images] == [""] ? hotel_params.except(:images) : hotel_params
+    if @hotel.update(hotel_update_params)
       redirect_to @hotel, notice: 'Hotel was successfully updated.'
     else
       render :edit
     end
   end
+
+  private
   
+  def hotel_params
+    params.require(:hotel).permit(:name, :city, :country, :state, :address, :loc_lat, :loc_long, :rating, :price, :discounted_price, :bed, :living_room, :bathroom, :kitchen, :reserved_room, :facilities, :paragraphs, images: [], base_image: [])
+  end
+
   def destroy
     @hotel.destroy
     redirect_to hotels_url, notice: 'Hotel was successfully destroyed.'
