@@ -80,3 +80,6 @@ gem 'sidekiq', '~> 7.2.4'
 gem 'sass-rails', '>= 6'
 
 gem 'rails_12factor', group: :production
+
+gem 'active_model_serializers'
+
