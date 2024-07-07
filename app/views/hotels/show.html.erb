@@ -5,7 +5,7 @@
 <section class="section">
 <h1 class="heading"><%= @hotel.name %></h1>
 <div class="row">
-    <%= image_tag @hotel.base_image, class: "img-fluid base-img" %>
+  <% if @hotel.base_image.present? %> <%= image_tag @hotel.base_image, class: "img-fluid base-img" %> <%end%>
 </div>
 </section>
 <p>

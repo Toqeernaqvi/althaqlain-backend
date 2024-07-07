@@ -5,16 +5,27 @@
 
 <div class="list-group">
   <% @hotels.each do |hotel| %>
-    <a href="<%= hotel_path(hotel) %>" class="list-group-item list-group-item-action">
-      <h5 class="mb-1"><%= hotel.name %></h5>
-      <p class="mb-1"><%= hotel.city %>, <%= hotel.state %>, <%= hotel.country %></p>
-      <small>Rating: <%= hotel.rating %></small>
-      <% if admin_signed_in? %>
-        <div class="btn-group float-right">
-          <%= link_to 'Edit', edit_hotel_path(hotel), class: 'btn btn-secondary btn-sm' %>
-<%= link_to 'Destroy', hotel, data: { "turbo-method": :delete }, class: 'btn btn-danger btn-sm' %>
-        </div>
+    <a href="<%= hotel_path(hotel) %>" class="border">
+      
+      <div class="flex">
+      <div>
+        <h5 class="mb-1"><%= hotel.name %></h5>
+        <p class="mb-1 text-muted discription "><%= hotel.city %>, <%= hotel.state %>, <%= hotel.country %></p>
+        <small>Rating: <%= hotel.rating %></small>
+
+      </div>
+      <div>
+        <% if hotel.base_image.present? %> <%= image_tag hotel.base_image, class: "img-fluid img" %> <%end%>
+      </div>
+     </div>
+     <div class="m-4">
+<% if admin_signed_in? %>
+          <%= link_to 'Edit', edit_hotel_path(hotel), class: 'btn btn-secondary px-4 ' %>
+          <%= link_to 'Destroy', hotel_path(hotel), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger', "data-turbo-method": :delete %>
+      
       <% end %>
+     </div>
+            
     </a>
   <% end %>
 </div>

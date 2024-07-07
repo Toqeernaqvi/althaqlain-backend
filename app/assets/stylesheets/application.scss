@@ -4,6 +4,29 @@
 
 // Define section styles
 
+
+.border {
+    border: 2px solid #000;
+    padding: 1rem;
+}
+
+.bg {
+    background-image: url('../images/hotels-min.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.flex {
+float: left;
+font-size: 1.5rem;
+font-weight: 700;
+margin-bottom: 1rem;
+}
+
+
+
 .heading {
     font-size: 5rem;
 }
@@ -160,10 +183,9 @@ label {
     flex-wrap: wrap;
 }
 
-img {
-    height: 10rem;
-    width: 10rem;
-
+.img {
+width: 17rem;
+height: 10rem;
 }
 
 .existing-image {
@@ -172,4 +194,33 @@ img {
     gap: 1rem;
     border: 1px solid gray ;
     padding: 1rem;
+}
+
+
+.flex {
+    display: flex;
+    gap: 29rem;
+    align-items: center;
+}
+
+h5 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.discription {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.float {
+    display: flex;
+    gap: 5px;
+}
+
+.hotel-image {
+    height: 12rem;
+    width:15rem;
 }
