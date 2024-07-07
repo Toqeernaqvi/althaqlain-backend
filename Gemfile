@@ -86,5 +86,6 @@ gem 'active_model_serializers'
 gem 'rack-cors', require: 'rack/cors'
 gem 'cloudinary'
 gem 'carrierwave'
+gem 'activestorage-cloudinary-service'
 
 gem 'dotenv-rails', groups: [:development, :test]
