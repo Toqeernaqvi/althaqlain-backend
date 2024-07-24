@@ -1,6 +1,6 @@
 // Import Bootstrap and hotel styles
 @import "bootstrap";
-@import "hotel";
+@import "./hotel.scss";
 
 // Define section styles
 
@@ -162,20 +162,20 @@ background-color:#42414116 ;
 
 // Style Form
 
-.form {
-  margin-top: 4rem;
-  width : 60rem;
-  padding: 2rem;
-  border-radius:30px;
-  background-color: #f6f4f4;
-  border: 1px solid gray;
-  margin-left: 20rem;
-  box-shadow: 0px 8px 24px -6px rgba(82,76,82,0.67);
-}
+// .form {
+//   margin-top: 4rem;
+//   width : 60rem;
+//   padding: 2rem;
+//   border-radius:30px;
+//   background-color: #f6f4f4;
+//   border: 1px solid gray;
+//   margin-left: 20rem;
+//   box-shadow: 0px 8px 24px -6px rgba(82,76,82,0.67);
+// }
 
-label {
-    color: #000;
-}
+// label {
+//     color: #000;
+// }
 
 .field {
     display: flex;

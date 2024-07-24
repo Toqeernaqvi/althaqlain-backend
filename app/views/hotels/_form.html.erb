@@ -11,17 +11,18 @@
   <% end %>
 
  
+ <div class="body">
  
 
   <div class="row mb-3">
     <div class="col-md-6">
       <%= form.label :name, class: "form-label" %>
-      <%= form.text_field :name, class: "form-control" %>
+<%= form.text_field :name, class: "form-control", placeholder: "John" %>
     </div>
 
     <div class="col-md-6">
       <%= form.label :city, class: "form-label" %>
-      <%= form.text_field :city, class: "form-control" %>
+      <%= form.text_field :city, class: "form-control", placeholder: "Lahore" %>
     </div>
   </div>
 
@@ -133,7 +134,9 @@
   </div>
 
   
-  <div class="text-center">
+  <div class="">
     <%= form.submit "Save Hotel", class: "btn btn-primary bg-dark mt-3" %>
   </div>
 <% end %>
+
+ </div>
