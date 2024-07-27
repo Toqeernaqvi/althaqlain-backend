@@ -1,6 +1,6 @@
 // Import Bootstrap and hotel styles
 @import "bootstrap";
-@import "./hotel.scss";
+@import "./hotel";
 
 // Define section styles
 
@@ -102,13 +102,15 @@ margin-bottom: 1rem;
     background-color: #343a40;
     padding-top: 20px;
 }
+
 .content {
     margin-left: 250px;
     padding: 20px;
 }
+
 .sidebar a {
     color: #ffffff;
-    padding: 10px;
+    padding: 20px 40px;
     text-decoration: none;
     display: block;
 }

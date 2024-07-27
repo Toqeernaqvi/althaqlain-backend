@@ -11,7 +11,7 @@
   <% end %>
 
  
- <div class="body">
+ <div class="forms">
  
 
   <div class="row mb-3">
@@ -22,105 +22,105 @@
 
     <div class="col-md-6">
       <%= form.label :city, class: "form-label" %>
-      <%= form.text_field :city, class: "form-control", placeholder: "Lahore" %>
+      <%= form.text_field :city, class: "form-control", placeholder: "City" %>
     </div>
   </div>
 
   <div class="row mb-3">
     <div class="col-md-6">
       <%= form.label :country, class: "form-label" %>
-      <%= form.text_field :country, class: "form-control" %>
+      <%= form.text_field :country, class: "form-control" , placeholder: "Country" %>
     </div>
 
     <div class="col-md-6">
       <%= form.label :state, class: "form-label" %>
-      <%= form.text_field :state, class: "form-control" %>
+      <%= form.text_field :state, class: "form-control" , placeholder: "State" %>
     </div>
   </div>
 
   <div class="mb-3">
     <%= form.label :address, class: "form-label" %>
-    <%= form.text_field :address, class: "form-control" %>
+    <%= form.text_field :address, class: "form-control" , placeholder: "Address" %>
   </div>
 
   <div class="row mb-3">
     <div class="col-md-6">
       <%= form.label :loc_lat, class: "form-label" %>
-      <%= form.text_field :loc_lat, class: "form-control" %>
+      <%= form.text_field :loc_lat, class: "form-control" , placeholder: "0.0" %>
     </div>
 
     <div class="col-md-6">
       <%= form.label :loc_long, class: "form-label" %>
-      <%= form.text_field :loc_long, class: "form-control" %>
+      <%= form.text_field :loc_long, class: "form-control" , placeholder: "0.0" %>
     </div>
   </div>
 
   <div class="row mb-3">
     <div class="col-md-6">
       <%= form.label :rating, class: "form-label" %>
-      <%= form.number_field :rating, step: 0.1, class: "form-control" %>
+      <%= form.number_field :rating, step: 0.1, class: "form-control" , placeholder: "5" %>
     </div>
 
     <div class="col-md-6">
       <%= form.label :price, class: "form-label" %>
-      <%= form.number_field :price, class: "form-control" %>
+      <%= form.number_field :price, class: "form-control" , placeholder: "0" %>
     </div>
   </div>
 
   <div class="row mb-3">
     <div class="col-md-6">
       <%= form.label :discounted_price, class: "form-label" %>
-      <%= form.number_field :discounted_price, class: "form-control" %>
+      <%= form.number_field :discounted_price, class: "form-control" , placeholder: "0" %>
     </div>
 
     <div class="col-md-6">
       <%= form.label :bed, class: "form-label" %>
-      <%= form.number_field :bed, class: "form-control" %>
+      <%= form.number_field :bed, class: "form-control" , placeholder: "0" %>
     </div>
   </div>
 
   <div class="row mb-3">
     <div class="col-md-6">
       <%= form.label :living_room, class: "form-label" %>
-      <%= form.number_field :living_room, class: "form-control" %>
+      <%= form.number_field :living_room, class: "form-control" , placeholder: "0" %>
     </div>
 
     <div class="col-md-6">
       <%= form.label :bathroom, class: "form-label" %>
-      <%= form.number_field :bathroom, class: "form-control" %>
+      <%= form.number_field :bathroom, class: "form-control" , placeholder: "0" %>
     </div>
   </div>
 
   <div class="row mb-3">
     <div class="col-md-6">
       <%= form.label :kitchen, class: "form-label" %>
-      <%= form.number_field :kitchen, class: "form-control" %>
+      <%= form.number_field :kitchen, class: "form-control" , placeholder: "0" %>
     </div>
 
     <div class="col-md-6">
       <%= form.label :reserved_room, class: "form-label" %>
-      <%= form.number_field :reserved_room, class: "form-control" %>
+      <%= form.number_field :reserved_room, class: "form-control" , placeholder: "0" %>
     </div>
   </div>
 
   <div class="mb-3">
     <%= form.label :facilities, class: "form-label" %>
-    <%= form.text_area :facilities, class: "form-control" %>
+    <%= form.text_area :facilities, class: "form-control" , placeholder: "facilities" %>
   </div>
 
   <div class="mb-3">
     <%= form.label :paragraphs, class: "form-label" %>
-    <%= form.text_area :paragraphs, class: "form-control" %>
+    <%= form.text_area :paragraphs, class: "form-control" , placeholder: "Descripition" %>
   </div>
 
   <div class="mb-3">
     <%= form.label :images, class: "form-label" %>
-    <%= form.file_field :images, multiple: true, class: "form-control" %>
+    <%= form.file_field :images, multiple: true, class: "form-control hei"  %>
   </div>
 
     <div class="mb-3">
     <%= form.label :base_image, class: "form-label" %>
-    <%= form.file_field :base_image, class: "form-control" %>
+    <%= form.file_field :base_image, class: "form-control hei" %>
   </div>
 
 
@@ -137,6 +137,8 @@
   <div class="">
     <%= form.submit "Save Hotel", class: "btn btn-primary bg-dark mt-3" %>
   </div>
+  
+
 <% end %>
 
  </div>
