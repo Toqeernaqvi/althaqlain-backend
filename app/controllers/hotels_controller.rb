@@ -28,7 +28,7 @@ class HotelsController < ApplicationController
       end
     end
   end
-
+  
   def update
     # Ensure to permit the base_image and images parameters
     hotel_update_params = hotel_params.except(:base_image, :images)
