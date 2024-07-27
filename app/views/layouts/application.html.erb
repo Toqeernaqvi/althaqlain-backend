@@ -20,15 +20,16 @@
         <hr>
         <ul class="navbar-nav flex-column">
           <% if admin_signed_in? %>
-            <li class="nav-items">
+            <li class="nav-items btn btn-dark">
               <ion-icon name="log-in-outline" class="icons"></ion-icon>
               <span class="navbar-text">Logged in as: <%= current_admin.email %></span>
             </li>
-            <li class="nav-items">
+            <li class="nav-items btn btn-dark">
               <ion-icon name="bed-outline" class="icon"></ion-icon>
               <%= link_to "Hotels", hotels_path %>
             </li>
-            <li class="login">
+            <li class="login btn btn-danger">
+            <ion-icon name="power-outline" class="icon"></ion-icon>
               <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
             </li>
           <% else %>
@@ -39,7 +40,8 @@
         </ul>
       </div>
     </div>
-    <div class="container mt-4">
+
+    <div class="container mt-4 padding">
       <%= yield %>
     </div>
   </body>

@@ -2,227 +2,148 @@
 @import "bootstrap";
 @import "./hotel";
 
-// Define section styles
-
-
-.border {
-    border: 2px solid #000;
-    padding: 1rem;
-}
-
-.bg {
-    background-image: url('../images/hotels-min.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-
 .flex {
-float: left;
-font-size: 1.5rem;
-font-weight: 700;
-margin-bottom: 1rem;
-}
-
-
-
-.heading {
-    font-size: 5rem;
+  float: left;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .left {
-    margin-left: 7rem;
+  margin-left: 7rem;
 }
 
+// Base Img
+
 .base {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .base-img {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
+.existing-image {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid gray;
+  padding: 1rem;
+}
+
+// Headings
+
 .heading {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
 }
 
 .headings {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    text-align: center;
-    margin-left: 19rem;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  margin-left: 19rem;
 }
 
+// Scroll bar
 
 .body {
-    overflow-y: hidden;
+  overflow-y: hidden;
 }
 
-
 .scroll {
-    overflow-y: scroll;
-    height: 800px;
+  overflow-y: scroll;
+  height: 800px;
 }
 
 .scroll::-webkit-scrollbar {
-    width: 10px;
-  }
+  width: 10px;
+}
 
 .scroll::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 .scroll::-webkit-scrollbar-thumb {
   background: #888;
-      border-radius:10px;
+  border-radius: 10px;
 }
 
 .scroll::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+  background: #555;
+}
 
+// Nav Side Bar
 
-
-  body {
-    display: flex;
-  }
-
+body {
+  display: flex;
+}
 
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    background-color: #343a40;
-    padding-top: 20px;
+  width: 250px;
+  height: 100vh;
+  background-color: #343a40;
+  padding-top: 20px;
 }
 
 .content {
-    margin-left: 250px;
-    padding: 20px;
+  margin-left: 250px;
+  padding: 20px;
 }
 
 .sidebar a {
-    color: #ffffff;
-    padding: 20px 40px;
-    text-decoration: none;
-    display: block;
+  color: #ffffff;
+  padding: 20px 40px;
+  text-decoration: none;
+  display: block;
 }
 
 .logo {
- font-size: 2rem;
+  font-size: 2rem;
 }
 
 .nav-items {
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    line-height: 1.5;
-    padding: 1rem;
-    background-color: #706e6e16;
-    transition: all 0.3s;
-}
-
-.nav-items:hover {
-background-color:#42414116 ;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  line-height: 1.5;
+  padding: 1rem;
+  border: 1px solid #333333;
 }
 
 .login {
-    text-align: center;
-}
-
-.login a{
-    border: 1px solid red;
-    transition: all .3s;
-}
-
-.login a:hover{
-    background-color: red;
-    color: #fff;
+  display: flex;
+  align-items: center;
 }
 
 .icons {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 .icon {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .icons:hover,
 .icon:hover {
-    color: rgb(229, 56, 56);
+  color: rgb(229, 56, 56);
 }
 
+// Hotel table
 
-// Style Form
-
-// .form {
-//   margin-top: 4rem;
-//   width : 60rem;
-//   padding: 2rem;
-//   border-radius:30px;
-//   background-color: #f6f4f4;
-//   border: 1px solid gray;
-//   margin-left: 20rem;
-//   box-shadow: 0px 8px 24px -6px rgba(82,76,82,0.67);
-// }
-
-// label {
-//     color: #000;
-// }
-
-.field {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+.table-responsive {
+  overflow-y: scroll;
+  height: calc(100vh - 150px);
 }
 
-.img {
-width: 17rem;
-height: 10rem;
-}
-
-.existing-image {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    border: 1px solid gray ;
-    padding: 1rem;
-}
-
-
-.flex {
-    display: flex;
-    gap: 29rem;
-    align-items: center;
-}
-
-h5 {
-    font-size: 1.7rem;
-    font-weight: 600;
-    margin-bottom: 3rem;
-}
-
-.discription {
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin-bottom: 1rem;
-}
-
-.float {
-    display: flex;
-    gap: 5px;
-}
-
-.hotel-image {
-    height: 12rem;
-    width:15rem;
+td a {
+  text-decoration: none;
+  font-weight: 300;
+  color: #333333;
 }

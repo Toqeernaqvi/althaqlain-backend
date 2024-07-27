@@ -3,29 +3,48 @@
   <%= link_to 'New Hotel', new_hotel_path, class: 'btn btn-primary mb-3' %>
 <% end %>
 
-<div class="list-group">
-  <% @hotels.each do |hotel| %>
-    <a href="<%= hotel_path(hotel) %>" class="border">
-      
-      <div class="flex">
-      <div>
-        <h5 class="mb-1"><%= hotel.name %></h5>
-        <p class="mb-1 text-muted discription "><%= hotel.city %>, <%= hotel.state %>, <%= hotel.country %></p>
-        <small>Rating: <%= hotel.rating %></small>
-
-      </div>
-      <div>
-        <% if hotel.base_image.present? %> <%= image_tag hotel.base_image, class: "img-fluid img" %> <%end%>
-      </div>
-     </div>
-     <div class="m-4">
-<% if admin_signed_in? %>
-          <%= link_to 'Edit', edit_hotel_path(hotel), class: 'btn btn-secondary px-4 ' %>
-          <%= link_to 'Destroy', hotel_path(hotel), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger', "data-turbo-method": :delete %>
-      
+<div class="table-responsive">
+  <table class="table table-hover table-bordered table-striped">
+    <thead class="thead-dark table-dark">
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Rating</th>
+        <% if admin_signed_in? %>
+          <th scope="col">Actions</th>
+        <% end %>
+      </tr>
+    </thead>
+    <tbody>
+      <% @hotels.each do |hotel| %>
+        <tr>
+          <td>
+            <% if hotel.base_image.present? %>
+              <%= link_to hotel_path(hotel) do %>
+                <%= image_tag hotel.base_image, class: "img-fluid", style: "max-width: 100px; height: auto;" %>
+              <% end %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to hotel_path(hotel) do %>
+              <p class="mb-1 font-weight-bold"><b><%= hotel.name %></b></p>
+            <% end %>
+          </td>
+          <td>
+            <p class="mb-1 text-muted"><%= hotel.city %>, <%= hotel.state %>, <%= hotel.country %></p>
+          </td>
+          <td>
+            <small>Rating: <%= hotel.rating %></small>
+          </td>
+          <% if admin_signed_in? %>
+            <td>
+              <%= link_to 'Edit', edit_hotel_path(hotel), class: 'btn btn-secondary px-4 mb-1' %>
+              <%= link_to 'Destroy', hotel_path(hotel), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            </td>
+          <% end %>
+        </tr>
       <% end %>
-     </div>
-            
-    </a>
-  <% end %>
+    </tbody>
+  </table>
 </div>
