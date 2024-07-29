@@ -4,7 +4,7 @@ class HotelSerializer < ActiveModel::Serializer
 
   attributes :id, :name, :city, :country, :state, :address, :loc_lat, :loc_long, :rating, 
              :price, :discounted_price, :bed, :living_room, :bathroom, :kitchen, 
-             :reserved_room, :facilities, :paragraphs, :created_at, :updated_at, 
+             :reserved_room, :description, :created_at, :updated_at, 
              :base_image_url, :images_urls
 
   def images_urls

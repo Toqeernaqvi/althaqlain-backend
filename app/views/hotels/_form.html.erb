@@ -178,21 +178,11 @@
     </div>
 
     <div class="mb-3">
-      <%= form.label :facilities, class: "form-label" %>
-      <%= form.text_area :facilities, class: "form-control", placeholder: "Facilities" %>
-      <% if @hotel.errors[:facilities].any? %>
+      <%= form.label :description, class: "form-label" %>
+      <%= form.text_area :description, class: "form-control", placeholder: "Description" %>
+      <% if @hotel.errors[:description].any? %>
         <div class="text-danger">
-          <%= @hotel.errors[:facilities].first %>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="mb-3">
-      <%= form.label :paragraphs, class: "form-label" %>
-      <%= form.text_area :paragraphs, class: "form-control", placeholder: "Description" %>
-      <% if @hotel.errors[:paragraphs].any? %>
-        <div class="text-danger">
-          <%= @hotel.errors[:paragraphs].first %>
+          <%= @hotel.errors[:description].first %>
         </div>
       <% end %>
     </div>

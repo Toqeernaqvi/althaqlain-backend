@@ -17,7 +17,7 @@ one:
   kitchen: 1
   reserved_room: 1
   facilities: 
-  paragraphs: 
+  description: 
 
 two:
   name: MyString
@@ -36,4 +36,4 @@ two:
   kitchen: 1
   reserved_room: 1
   facilities: 
-  paragraphs: 
+  description: 

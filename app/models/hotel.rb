@@ -9,11 +9,10 @@ class Hotel < ApplicationRecord
     validates :state, length: { maximum: 255 }, allow_blank: true
     validates :address, presence: true, length: { maximum: 255 }
     validates :loc_lat, :loc_long, presence: true, numericality: true
-    validates :rating, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }, allow_nil: true
+    validates :rating, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 10 }, allow_nil: true
     validates :price, numericality: { greater_than_or_equal_to: 0 }
     validates :discounted_price, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
     validates :bed, :living_room, :bathroom, :kitchen, :reserved_room, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_nil: true
-    validates :facilities, length: { maximum: 1000 }, allow_blank: true
-    validates :paragraphs, length: { maximum: 5000 }, allow_blank: true
+    validates :description,presence: true, allow_blank: true
     
 end
