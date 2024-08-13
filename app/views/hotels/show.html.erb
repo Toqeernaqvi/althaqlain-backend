@@ -92,7 +92,7 @@
             <%= link_to 'Edit', edit_hotel_path(@hotel), class:
             'btn btn-primary' %>
             <%= link_to 'Back', hotels_path, class: 'btn btn-secondary' %>
-            <%= link_to 'Destroy', hotel_path(@hotel), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            <%= button_to  'Destroy', hotel_path(@hotel),  method: :delete, class: 'btn btn-danger',form: { data: {turbo_confirm: 'Are you sure?'} } %>
           </div>
 
         </div>
