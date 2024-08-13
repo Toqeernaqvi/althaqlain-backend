@@ -9,4 +9,3 @@ pin "application", preload: true
 
 pin "bootstrap", to: "bootstrap.min.js"
 pin "@popperjs/core", to: "popper.min.js"
-pin "@rails/ujs", to: "https://cdn.jsdelivr.net/npm/@rails/ujs@7.0.4/dist/rails-ujs.js"
