@@ -89,5 +89,3 @@ gem 'carrierwave'
 gem 'activestorage-cloudinary-service'
 
 gem 'dotenv-rails', groups: [:development, :test]
-
-gem 'rails-ujs'
