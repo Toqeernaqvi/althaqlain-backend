@@ -96,5 +96,8 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
   config.action_mailer.default_url_options = { host: 'https://althaqlain-backend-90833a98168c.herokuapp.com', protocol: 'https' }
-
+  config.assets.compile = true
+  config.assets.digest = true
+  config.assets.js_compressor = :uglifier
+  
 end
