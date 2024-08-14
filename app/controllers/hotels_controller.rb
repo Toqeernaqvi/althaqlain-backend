@@ -1,5 +1,5 @@
 class HotelsController < ApplicationController
-  before_action :authenticate_admin!, except: [:index, :show]
+  before_action :authenticate_admin!
   before_action :set_hotel, only: [:show, :edit, :update, :destroy, :delete_image]
 
   def index
