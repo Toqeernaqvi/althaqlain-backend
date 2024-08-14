@@ -4,7 +4,8 @@ class Api::HotelsController < ApplicationController
 
   # GET /api/hotels
   def index
-    @hotels = Hotel.all
+    @q = Hotel.ransack(params[:q])
+    @hotels = @q.result
     render json: @hotels, each_serializer: HotelSerializer
   rescue => e
     Rails.logger.error "Error in index: #{e.message}"
