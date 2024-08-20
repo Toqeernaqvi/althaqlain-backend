@@ -15,4 +15,8 @@ class Hotel < ApplicationRecord
     validates :bed, :living_room, :bathroom, :kitchen, :reserved_room, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_nil: true
     validates :description,presence: true, allow_blank: true
     
+
+    def self.ransackable_attributes(auth_object = nil)
+        ["address", "base_image", "bathroom", "bed", "city", "country", "created_at", "description", "discounted_price", "id", "id_value", "kitchen", "living_room", "loc_lat", "loc_long", "name", "price", "rating", "reserved_room", "state", "updated_at"]
+    end
 end
