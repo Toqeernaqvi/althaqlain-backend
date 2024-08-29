@@ -1,5 +1,9 @@
-<h1>Edit Hotel</h1>
+<h1 class="heading">Edit Hotel</h1>
 
-<%= render 'form', hotel: @hotel %>
+<div class="navbar-buttons mb-4">
+    <%= link_to hotels_path, class: "btn btn-secondary back-button" do %> &larr; Back<% end %>
+</div>
 
-<%= link_to 'Back', hotels_path, class: "btn btn-secondary" %>
+<%= turbo_frame_tag "hotel" do %>
+    <%= render 'form', hotel: @hotel %>
+<% end %>

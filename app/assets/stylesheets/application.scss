@@ -4,6 +4,19 @@
 @import "bootstrap";
 @import "./hotel";
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500; /* Slightly bolder for headings */
+}
+
+.navbar-buttons .btn {
+  font-weight: 700; /* Bolder for buttons */
+}
+
+
 .flex {
   float: left;
   font-size: 1.5rem;
@@ -35,8 +48,6 @@
   padding: 1rem;
 }
 
-
-
 // Headings
 
 .heading {
@@ -44,6 +55,9 @@
   font-weight: 700;
   margin-bottom: 2rem;
   color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .headings {
@@ -93,6 +107,7 @@ body {
   height: 100vh;
   background-color: #343a40;
   padding-top: 20px;
+  position: fixed;
 }
 
 .content {
@@ -119,6 +134,10 @@ body {
   line-height: 1.5;
   padding: 1rem;
   border: 1px solid #333333;
+}
+
+.main-container{
+  padding-left: 250px;
 }
 
 .login {
@@ -150,4 +169,12 @@ td a {
   text-decoration: none;
   font-weight: 300;
   color: #333333;
+}
+
+
+.back-button{
+  color: #fff;
+  background-color: #21252b;
+  border-color: #dee2e6;
+  margin-left: -40px;
 }

@@ -1,123 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Profile</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .card-header {
-            background-color: #f5f5f5;
-            display: flex;
-            gap : 2rem;
-            align-items: center;
-            padding: 20px;
-        }
-        .card-header .base-img {
-            max-width: 23rem; /* Set the max-width of the image to 20rem */
-            max-height: auto;
-        }
-        .card-header h1 {
-            margin: 0;
-            flex-grow: 1;
-            text-align: center;
-            padding-left: 20px;
-        }
-        .card-body p {
-            margin-bottom: 10px;
-        }
-        .images-row {
-            overflow-x: scroll;
-            white-space: nowrap;
-        }
-        .images-row img {
-            display: inline-block;
-            margin-right: 10px;
-            max-width: 200px;
-            height: auto;
-        }
-
-        .card-title {
-          font-size: 2rem;
-          margin-bottom: 2rem;
-          font-weight: 600;
-        }
-
-        .button-group {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .button-group .btn {
-            margin: 5px;
-            width : 20rem;
-        }
-
-        .container .card:not(:last-child) {
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container mt-5">
-        <!-- First Card: Base Image and Hotel Name -->
-        <div class="card">
-
-            <div class="card-header">
-                <!-- Replace 'base-image.jpg' with your base image file -->
-                <% if @hotel.base_image.present? %>
-                    <%= image_tag @hotel.base_image, class: "base-img" %>
-                <% end %>
-                <h1 class="heading"><%= @hotel.name %></h1>
+<div class="pl-10">
+    <!-- First Card: Base Image and Hotel Name -->
+    <div class="card">
+        <div class="card-header">
+            <!-- Replace 'base-image.jpg' with your base image file -->
+            <% if @hotel.base_image.present? %>
+                <%= image_tag @hotel.base_image, class: "base-img" %>
+            <% end %>
+            <h1 class="heading"><%= @hotel.name %></h1>
+        </div>
+    </div>
+    <!-- Button Group -->
+    <div class="button-group mb-4">
+        <%= link_to 'Edit', edit_hotel_path(@hotel), class: 'btn btn-primary' %>
+        <%= link_to 'Back', hotels_path, class: 'btn btn-secondary' %>
+        <%= button_to 'Destroy', hotel_path(@hotel), method: :delete, class: 'btn btn-danger', form: { data: { turbo_confirm: 'Are you sure?' } } %>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <!-- Second Card: Hotel Information -->
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Hotel Information</h4>
+                    <p><strong>City:</strong> <%= @hotel.city %></p>
+                    <p><strong>Country:</strong> <%= @hotel.country %></p>
+                    <p><strong>State:</strong> <%= @hotel.state %></p>
+                    <p><strong>Address:</strong> <%= @hotel.address %></p>
+                    <p><strong>Location Latitude:</strong> <%= @hotel.loc_lat %></p>
+                    <p><strong>Location Longitude:</strong> <%= @hotel.loc_long %></p>
+                    <p><strong>Rating:</strong> <%= @hotel.rating %></p>
+                    <p><strong>Price:</strong> <%= @hotel.price %></p>
+                    <p><strong>Discounted Price:</strong> <%= @hotel.discounted_price %></p>
+                    <p><strong>Bed:</strong> <%= @hotel.bed %></p>
+                    <p><strong>Living Room:</strong> <%= @hotel.living_room %></p>
+                    <p><strong>Bathroom:</strong> <%= @hotel.bathroom %></p>
+                    <p><strong>Kitchen:</strong> <%= @hotel.kitchen %></p>
+                    <p><strong>Reserved Room:</strong> <%= @hotel.reserved_room %></p>
+                    <p><strong>Description:</strong> <%= @hotel.description %></p>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-3">
-                <!-- Second Card: Hotel Information -->
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Hotel Information</h4>
-                        <p><strong>City:</strong> <%= @hotel.city %></p>
-                        <p><strong>Country:</strong> <%= @hotel.country %></p>
-                        <p><strong>State:</strong> <%= @hotel.state %></p>
-                        <p><strong>Address:</strong> <%= @hotel.address %></p>
-                        <p><strong>Location Latitude:</strong> <%= @hotel.loc_lat %></p>
-                        <p><strong>Location Longitude:</strong> <%= @hotel.loc_long %></p>
-                        <p><strong>Rating:</strong> <%= @hotel.rating %></p>
-                        <p><strong>Price:</strong> <%= @hotel.price %></p>
-                        <p><strong>Discounted Price:</strong> <%= @hotel.discounted_price %></p>
-                        <p><strong>Bed:</strong> <%= @hotel.bed %></p>
-                        <p><strong>Living Room:</strong> <%= @hotel.living_room %></p>
-                        <p><strong>Bathroom:</strong> <%= @hotel.bathroom %></p>
-                        <p><strong>Kitchen:</strong> <%= @hotel.kitchen %></p>
-                        <p><strong>Reserved Room:</strong> <%= @hotel.reserved_room %></p>
-                        <p><strong>Description:</strong> <%= @hotel.description %></p>
+        <div class="col-9">
+            <!-- Third Card: Hotel Images -->
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Hotel Images</h4>
+                    <div class="images-row">
+                        <% @hotel.images.each do |image| %>
+                            <%= image_tag image, class: "img-fluid" %>
+                        <% end %>
                     </div>
                 </div>
-            </div>
-            <div class="col-9">
-                <!-- Third Card: Hotel Images -->
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Hotel Images</h4>
-                        <div class="images-row">
-                            <% @hotel.images.each do |image| %>
-                                <%= image_tag image, class: "img-fluid" %>
-                            <% end %>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-             <!-- Button Group -->
-            <div class="button-group mb-4">
-                <%= link_to 'Edit', edit_hotel_path(@hotel), class: 'btn btn-primary' %>
-                <%= link_to 'Back', hotels_path, class: 'btn btn-secondary' %>
-                <%= button_to 'Destroy', hotel_path(@hotel), method: :delete, class: 'btn btn-danger', form: { data: { turbo_confirm: 'Are you sure?' } } %>
             </div>
         </div>
     </div>
-</body>
-</html>
+</div>

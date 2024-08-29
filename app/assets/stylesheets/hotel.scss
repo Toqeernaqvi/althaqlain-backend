@@ -40,3 +40,53 @@ body{
 .custom-margin-top {
     margin-top: 20px;
   }
+// show page
+  .card-header {
+    background-color: #f5f5f5;
+    display: flex;
+    gap : 2rem;
+    align-items: center;
+    padding: 20px;
+}
+.card-header .base-img {
+    max-width: 23rem; /* Set the max-width of the image to 20rem */
+    max-height: auto;
+}
+.card-header h1 {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    padding-left: 20px;
+}
+.card-body p {
+    margin-bottom: 10px;
+}
+.images-row {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.images-row img {
+    display: inline-block;
+    margin-right: 10px;
+    max-width: 200px;
+    height: auto;
+}
+.card-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.button-group .btn {
+    margin: 5px;
+    width : 20rem;
+}
+.container .card:not(:last-child) {
+    margin-bottom: 20px;
+}

@@ -76,4 +76,7 @@ Rails.application.configure do
 
   config.active_storage.service = :cloudinary
 
+  config.assets.initialize_on_precompile = false
+  config.serve_static_assets = false
+  config.assets.debug = true
 end
