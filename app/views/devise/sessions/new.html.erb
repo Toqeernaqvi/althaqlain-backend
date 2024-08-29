@@ -102,13 +102,13 @@
   </style>
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="lefts">
-      <%= image_tag("login.png", alt: "Login Illustration", class: "img-fluid") %>
+  <div class="container-fluid p-0">
+    <div class=" bg-dark">
+      <%= image_tag("login.webp", alt: "Login Illustration", class: "w-100 rounded h-100") %>
     </div>
     <div class="right">
       <div class="login-container">
-        <h2>Login to Dashboard</h2>
+        <h2>Login to Althaqlain Dashboard</h2>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "needs-validation" }) do |f| %>
           <div class="mb-3">
             <%= f.label :email, class: "form-label" %>
