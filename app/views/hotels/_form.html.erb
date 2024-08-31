@@ -1,4 +1,4 @@
-<%= form_for @hotel, local: true, html: { class: "form", multipart: true } do |form| %>
+<%= form_for @hotel, local: true, data: { turbo: false }, html: { class: "form", multipart: true } do |form| %>
 
   <% if @hotel.errors.any? %>
     <div id="error_explanation">
@@ -166,7 +166,7 @@
         <% end %>
       </div>
 
-      <div class="col-md-6"> 
+      <div class="col-md-6">
         <%= form.label :reserved_room, class: "form-label" %>
         <%= form.number_field :reserved_room, class: "form-control", placeholder: "0" %>
         <% if @hotel.errors[:reserved_room].any? %>
@@ -207,9 +207,11 @@
       <% end %>
     </div>
 
-    <div class="field">
+      <h2>Existing Images</h2>
+    <div class="field d-flex">
+      
       <% @hotel.images.each do |image| %>
-        <div class="existing-image">
+        <div class="existing-image w-25 h-25">
           <%= image_tag image, class: "hotel-image" %>
           <%= link_to "Delete", delete_image_hotel_path(@hotel, image), data: { "turbo-method": :delete }, class: "btn btn-danger" %>
         </div>
