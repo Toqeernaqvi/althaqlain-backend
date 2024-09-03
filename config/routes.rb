@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   end
   namespace :api do
     resources :hotels, only: [:index, :show]
+    post '/subscribe', to: 'subscriptions#create'
+
   end
 
   root 'hotels#index'
