@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :hotels, only: [:index, :show]
     post '/subscribe', to: 'subscriptions#create'
-
+    post 'contact', to: 'contacts#create'
   end
 
   root 'hotels#index'
